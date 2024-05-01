@@ -45,7 +45,7 @@ export const InputComponent = ({
         placeholder={placeholder}
       />
     </div>
-    {isInvalid && <span style={{color: 'red', fontWeight: '200'}}>Обязательное поле</span>}
+    {isInvalid && <span className='error-message'>Обязательное поле</span>}
     </div>
   )
 }

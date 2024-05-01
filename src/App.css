@@ -2,7 +2,7 @@
   text-align: center;
   background-image: url('./assests/img/фон.png');
   background-size: cover;
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;

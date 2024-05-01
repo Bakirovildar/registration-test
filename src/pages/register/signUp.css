@@ -34,3 +34,23 @@
 .p-calendar {
     height: 56px;
 }
+
+.signUp-container h1 {
+    font-size: 36px;
+}
+
+
+@media all and (max-width: 600px) {
+    .signUp-container h1 {
+        font-size: 26px;
+    }
+
+    .sign-justify {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calendar-year {
+        max-width: none;
+    }
+}

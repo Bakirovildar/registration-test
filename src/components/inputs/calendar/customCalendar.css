@@ -12,7 +12,6 @@
     font-size: 16px;
     padding: 0 23px;
     color: rgba(0, 0, 0, 0.60);
-    z-index: 1;
     background: none;
 }
 
@@ -64,4 +63,10 @@
 .error-calendar {
     border: 1px solid red;
     border-radius: 6px;
+}
+
+@media all and (max-width: 600px) {
+    .calendar-icon {
+        top: 50%;
+    }
 }

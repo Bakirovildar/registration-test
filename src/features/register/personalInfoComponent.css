@@ -9,3 +9,9 @@
     font-size: 28px;
     font-weight: bold;
 }
+
+@media all and (max-width: 600px) {
+    .personal-head {
+        font-size: 18px;
+    }
+}

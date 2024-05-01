@@ -147,6 +147,7 @@
     border: 2px solid #E6E8EC !important;
     padding: 0 8px;
     border-radius: 12px !important;
+    z-index: 50 !important;
 }
 
 .error-select__menu {
@@ -214,6 +215,22 @@
 
 .error-message {
     position: absolute;
-    color: #FF275B;;
+    color: #FF275B;
+    ;
     font-weight: 200;
+    font-size: 16px;
+}
+
+@media all and (max-width: 600px) {
+    .error-message {
+        font-size: 12px;
+    }
+
+    .react-select__control {
+        padding: 0 8px !important;
+    }
+
+    .react-select__placeholder {
+        font-size: 12px !important;
+    }
 }

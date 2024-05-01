@@ -74,15 +74,3 @@ export const useSaveInfo = () => {
         setBirthDate
     }
 }
-
-
-
-/*/
-fullName: '',
-        gender: '',
-        birthDate: '',
-        university: '',
-        yearEnding: '',
-        workName: '',
-        duties: '' 
-/*/

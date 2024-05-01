@@ -56,3 +56,18 @@
 .input-required span {
     color: #FF275B;
 }
+
+@media all and (max-width: 600px) {
+    .input-required {
+        font-size: 16px;
+    }
+
+    .error-style {
+        font-size: 1px;
+    }
+
+    .text-input {
+        padding: 0 16px;
+        font-size: 12px;
+    }
+}
