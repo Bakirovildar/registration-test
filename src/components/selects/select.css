@@ -214,6 +214,6 @@
 
 .error-message {
     position: absolute;
-    color: red;
-    font-weight: '200';
+    color: #FF275B;;
+    font-weight: 200;
 }

@@ -1,20 +1,18 @@
+import { Nullable } from "primereact/ts-helpers"
+import { useState } from 'react'
 import Button from '../../components/buttons/Button'
 import { InputComponent } from '../../components/inputs/InputComponent'
 import { TextareaComponent } from '../../components/inputs/TextareaComponent'
+import { CustomCalendar } from '../../components/inputs/calendar/CustomCalendar'
 import { SelectComponent } from '../../components/selects/SelectComponent'
 import { PersonalInfoComponent } from '../../features/register/PersonalInfoComponent'
-import { Nullable } from "primereact/ts-helpers";
-import './signUp.css'
-import { useEffect, useState } from 'react'
-import { CustomCalendar } from '../../components/inputs/calendar/CustomCalendar'
-import { useDispatch, useSelector } from 'react-redux'
-import { increment } from '../../store/reducers'
 import { useSaveInfo } from '../../features/register/hooks'
+import './signUp.css'
 
 export const SignUp = () => {
     const [date, setDate] = useState<Nullable<Date>>(null);
 
-    const { saveInfoHandler, fullName, clickSaveHandler, isInvalid, setBirthDate, setFullName, setGender } = useSaveInfo()
+    const { saveInfoHandler, fullName, clickSaveHandler, isInvalid, birthDate, setBirthDate, setFullName, setGender, gender } = useSaveInfo()
 
     return (
         <div className="signUp-container">
@@ -25,19 +23,19 @@ export const SignUp = () => {
                         headTitle='ФИО'
                         placeholder='Введите ФИО'
                         required={true}
-                        isInvalid={isInvalid}
+                        isInvalid={!fullName && isInvalid}
                         onChange={event => saveInfoHandler('fullName', event.target.value)} />
                     <div className='sign-justify'>
                         <SelectComponent
                             required
                             headTitle='Пол'
-                            isInvalid={isInvalid}
+                            isInvalid={!gender && isInvalid}
                             options={['Мужской', 'Женский']}
                             onChange={value => saveInfoHandler('gender', value)}
                             placeholder='Выберите пол' />
                         <CustomCalendar
                             headTitle='Дата рождения'
-                            isInvalid={isInvalid}
+                            isInvalid={!birthDate && isInvalid}
                             required
                             onChange={date => saveInfoHandler('birthDate', date ? date.toISOString() : '' )} />
                     </div>

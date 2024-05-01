@@ -13,7 +13,7 @@ interface ICustomCalendar {
 }
 
 export const CustomCalendar = ({ dateFormat, required, headTitle, isInvalid, onChange }: ICustomCalendar) => {
-    const [date, setDate] = useState<Nullable<Date>>(new Date())
+    const [date, setDate] = useState<Nullable<Date>>()
 
     useEffect(() => {
         onChange(date)
