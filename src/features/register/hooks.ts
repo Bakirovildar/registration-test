@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { concatFullName } from "../../entity/register/utils"
 import { registerUser } from "../../services/register-service"
 import { register } from "../../services/userApiService"
@@ -42,9 +42,18 @@ export const useSaveInfo = () => {
         }
     }
 
-    
+    useEffect(() => {
+        if (!fullName || !gender || !birthDate) {
+            setIsInvalid(false)
+        }
+    }, [fullName, gender, birthDate])
 
     const clickSaveHandler = async() => {
+        if (!fullName || !gender || !birthDate) {
+            setIsInvalid(true)
+            return
+        }
+
         const apiUser = await register()
 
         const isSuccessfull = registerUser(fullName, concatFullName(apiUser.name.first, apiUser.name.last))
@@ -58,7 +67,11 @@ export const useSaveInfo = () => {
         saveInfoHandler,
         gender,
         birthDate,
-        clickSaveHandler
+        clickSaveHandler,
+        isInvalid,
+        setGender,
+        setFullName,
+        setBirthDate
     }
 }
 

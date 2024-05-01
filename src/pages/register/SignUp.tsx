@@ -14,7 +14,7 @@ import { useSaveInfo } from '../../features/register/hooks'
 export const SignUp = () => {
     const [date, setDate] = useState<Nullable<Date>>(null);
 
-    const { saveInfoHandler, fullName, clickSaveHandler } = useSaveInfo()
+    const { saveInfoHandler, fullName, clickSaveHandler, isInvalid, setBirthDate, setFullName, setGender } = useSaveInfo()
 
     return (
         <div className="signUp-container">
@@ -25,11 +25,21 @@ export const SignUp = () => {
                         headTitle='ФИО'
                         placeholder='Введите ФИО'
                         required={true}
-                        isInvalid={!fullName}
+                        isInvalid={isInvalid}
                         onChange={event => saveInfoHandler('fullName', event.target.value)} />
                     <div className='sign-justify'>
-                        <SelectComponent required headTitle='Пол' options={['Мужской', 'Женский']} onChange={value => console.log(value)} placeholder='Выберите пол' />
-                        <CustomCalendar headTitle='Дата рождения' required onChange={(date) => console.log(date)} />
+                        <SelectComponent
+                            required
+                            headTitle='Пол'
+                            isInvalid={isInvalid}
+                            options={['Мужской', 'Женский']}
+                            onChange={value => saveInfoHandler('gender', value)}
+                            placeholder='Выберите пол' />
+                        <CustomCalendar
+                            headTitle='Дата рождения'
+                            isInvalid={isInvalid}
+                            required
+                            onChange={date => saveInfoHandler('birthDate', date ? date.toISOString() : '' )} />
                     </div>
                 </PersonalInfoComponent>
 

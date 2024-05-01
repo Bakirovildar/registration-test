@@ -5,7 +5,7 @@ import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp'
 
 type IProps<T extends string> = {
-    onChange: (value?: T) => void
+    onChange: (value: T) => void
     value?: { value: T; label: string } | null
     options: ReadonlyArray<T>
     isValid?: boolean
@@ -52,7 +52,11 @@ export function SelectComponent<T extends string>({
                 placeholder={placeholder}
                 value={value}
                 isDisabled={disabled}
-                onChange={(newValue: SingleValue<{ value: T; label: string }> | null) => onChange(newValue?.value)}
+                onChange={(newValue: SingleValue<{ value: T; label: string }> | null) => {
+                    if (newValue !== null) {
+                        onChange(newValue.value);
+                    }
+                }}
             />
             {isInvalid && <div className='error-message'>Обязательное поле</div>}
         </div>
