@@ -1,0 +1,24 @@
+.textarea-input {
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #e2e2e2;
+    overflow: auto;
+    min-height: 78px;
+    display: block;
+    padding: 19px 28px;
+    font-size: 16px;
+    font-weight: 200;
+    appearance: none;
+    color: rgba(0, 0, 0, 0.60);
+    height: 46px;
+    font-style: normal;
+    text-align: left;
+}
+
+.error-style {
+    border: 1px solid red;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+}

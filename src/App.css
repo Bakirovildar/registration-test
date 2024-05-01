@@ -9,3 +9,23 @@
   left: 0;
   color: #3D3A3A;
 }
+
+.button-black {
+  background: black;
+  height: 56px;
+  width: 182px;
+  border-radius: 6px;
+  color: white !important;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-black:hover {
+  background: rgb(35, 76, 151);
+}
+
+.button-black:active {
+  background: rgb(109, 29, 26);;
+}

@@ -1,0 +1,67 @@
+.calendar-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+}
+
+.p-calendar {
+    width: 100%;
+}
+
+.p-inputtext {
+    font-size: 16px;
+    padding: 0 23px;
+    color: rgba(0, 0, 0, 0.60);
+    z-index: 1;
+    background: none;
+}
+
+.p-calendar .p-inputtext {
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.p-datepicker {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    padding: 20px;
+    border-radius: 16px;
+    color: #42474D;
+}
+
+.p-datepicker-header {
+    margin-bottom: 33px;
+}
+
+.p-datepicker-other-month {
+    color: #A6ACB3;
+}
+
+.p-datepicker td>span {
+    margin: 10px;
+}
+
+.p-datepicker-calendar thead tr {
+    color: #4DA2D6;
+}
+
+.p-datepicker-month {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.p-datepicker-year::before {
+    content: ", ";
+}
+
+.p-datepicker-year {
+    color: #4DA2D6;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.error-calendar {
+    border: 1px solid red;
+    border-radius: 6px;
+}

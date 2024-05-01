@@ -1,0 +1,219 @@
+.multi-select-select {
+    outline: none;
+}
+
+.react-select__control {
+    border-radius: 6px !important;
+    outline: none !important;
+    padding: 0 20px !important;
+    border: 1px solid rgba(0, 0, 0, 0.20) !important;
+    box-shadow: none;
+    min-height: 56px !important;
+    cursor: pointer !important;
+}
+
+.error-select__control {
+    border-radius: 6px !important;
+    outline: none !important;
+    padding: 0 8px !important;
+    border: 1px solid red !important;
+    box-shadow: none;
+    min-height: 56px !important;
+    cursor: pointer !important;
+}
+
+.error-select__control--is-focused {
+    border: 1px solid rgb(230, 232, 236) !important;
+    box-shadow: none !important;
+}
+
+.react-select__control--is-focused {
+    border: 1px solid rgb(230, 232, 236) !important;
+    box-shadow: none !important;
+}
+
+.react-select__indicator-separator {
+    display: none !important;
+}
+
+.error-select__indicator-separator {
+    display: none !important;
+}
+
+.react-select__single-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.error-select__single-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.react-select__indicator {
+    display: none !important;
+}
+
+.error-select__ndicator {
+    display: none !important;
+}
+
+.react-select__indicator {
+    cursor: pointer !important;
+}
+
+.error-select__indicator {
+    cursor: pointer !important;
+}
+
+.react-select__placeholder {
+    color: rgba(0, 0, 0, 0.60) !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+}
+
+.error-select__placeholder {
+    color: #23262f !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+}
+
+.react-select__multi-value {
+    background-color: #353945 !important;
+    border-radius: 5px !important;
+}
+
+.error-select__multi-value {
+    background-color: #353945 !important;
+    border-radius: 5px !important;
+}
+
+.react-select__multi-value__label {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+}
+
+.error-select__multi-value__label {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+}
+
+.react-select__multi-value__remove {
+    color: #fff !important;
+    font-weight: 300 !important;
+}
+
+.error-select__multi-value__remove {
+    color: #fff !important;
+    font-weight: 300 !important;
+}
+
+.react-select__multi-value__remove:hover {
+    background-color: #6d6d6d !important;
+}
+
+.error-select__multi-value__remove:hover {
+    background-color: #6d6d6d !important;
+}
+
+.react-select__multi-value__remove svg {
+    height: 19px !important;
+    width: 19px !important;
+}
+
+.error-select__multi-value__remove svg {
+    height: 19px !important;
+    width: 19px !important;
+}
+
+.react-select__menu {
+    background-color: #fcfcfd !important;
+    color: #777e90 !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    box-shadow: none !important;
+    border: 2px solid #E6E8EC !important;
+    padding: 0 8px;
+    border-radius: 12px !important;
+}
+
+.error-select__menu {
+    background-color: #fcfcfd !important;
+    color: #777e90 !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    box-shadow: none !important;
+    border: 1px solid #d2d5d7 !important;
+    padding: 0 8px;
+}
+
+.react-select__option--is-focused {
+    background-color: #fafafa !important;
+}
+
+.error-select__option--is-focused {
+    background-color: #fafafa !important;
+}
+
+.react-select__option--is-selected {
+    color: #23262f !important;
+    background-color: #f4f5f6 !important;
+    border-radius: 8px;
+}
+
+.error-select__option--is-selected {
+    color: #23262f !important;
+    background-color: #f4f5f6 !important;
+}
+
+.react-select__menu input {
+    display: none !important;
+}
+
+.error-select__menu input {
+    display: none !important;
+}
+
+.react-select__option {
+    cursor: pointer !important;
+    padding: 8px 16px !important;
+    margin: 5px 0;
+    min-height: 40px !important;
+}
+
+.error-select__option {
+    cursor: pointer !important;
+    padding: 8px 16px !important;
+    min-height: 40px !important;
+}
+
+.react-select__option:hover {
+    background: #f4f5f6 !important;
+    border-radius: 8px;
+}
+
+.error-select__option:hover {
+    background: #f4f5f6 !important;
+    border-radius: 8px;
+
+}
+
+.error-message {
+    position: absolute;
+    color: red;
+    font-weight: '200';
+}

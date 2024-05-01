@@ -1,0 +1,11 @@
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+}
+
+.personal-head {
+    font-size: 28px;
+    font-weight: bold;
+}
