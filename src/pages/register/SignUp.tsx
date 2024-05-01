@@ -14,7 +14,7 @@ import { useSaveInfo } from '../../features/register/hooks'
 export const SignUp = () => {
     const [date, setDate] = useState<Nullable<Date>>(null);
 
-    const { saveInfoHandler, fullName } = useSaveInfo()
+    const { saveInfoHandler, fullName, clickSaveHandler } = useSaveInfo()
 
     return (
         <div className="signUp-container">
@@ -47,7 +47,7 @@ export const SignUp = () => {
                     <TextareaComponent onChange={event => console.log(event.target.value)} placeholder='Должностные обязанности' />
 
                     <div style={{ textAlign: 'center', marginTop: '4px' }}>
-                        <Button onClick={() => ''} className='button-black'>Сохранить</Button>
+                        <Button onClick={clickSaveHandler} className='button-black'>Сохранить</Button>
                     </div>
                 </PersonalInfoComponent>
             </div>

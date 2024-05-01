@@ -1,15 +1,10 @@
-interface UserApiService {
-    register: () => string
-}
-
-const registerUser = (fullName: string, apiService: UserApiService) => {
-    const apifullName = apiService.register()
-    if (fullName === apifullName) {
+const registerUser = (fullName: string, apiFullName: string) => {
+    if (fullName === apiFullName) {
         return false
     }
     return true
 }
 
 export {
-    UserApiService, registerUser
+    registerUser
 }

@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { concatFullName } from "../../entity/register/utils"
+import { registerUser } from "../../services/register-service"
+import { register } from "../../services/userApiService"
 
 export const useSaveInfo = () => {
     const [fullName, setFullName] = useState<string>('')
@@ -13,24 +16,49 @@ export const useSaveInfo = () => {
 
 
     const saveInfoHandler = (name: string, value: string) => {
+        const newLocal = 'gender'
         switch (name) {
             case 'fullName':
-                setFullName(value)
+                setFullName(value);
+                break;
+            case newLocal:
+                setGender(value);
+                break;
+            case 'birthDate':
+                setBirthDate(value);
+                break;
+            case 'university':
+                setUniversity(value);
+                break;
+            case 'yearEnding':
+                setYearEnding(value);
+                break;
+            case 'workName':
+                setWorkName(value);
+                break;
+            case 'duties':
+                setDuties(value);
+                break;
         }
     }
 
-    useEffect(() => {
-        console.log(fullName);
+    
 
-    }, [fullName])
+    const clickSaveHandler = async() => {
+        const apiUser = await register()
 
-    const clickSaveHandler = () => {
+        const isSuccessfull = registerUser(fullName, concatFullName(apiUser.name.first, apiUser.name.last))
+    
+        console.log(isSuccessfull);
         
     }
 
     return {
         fullName,
-        saveInfoHandler
+        saveInfoHandler,
+        gender,
+        birthDate,
+        clickSaveHandler
     }
 }
 
