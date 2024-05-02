@@ -10,6 +10,7 @@
     box-shadow: none;
     min-height: 56px !important;
     cursor: pointer !important;
+    letter-spacing: 0em;
 }
 
 .error-select__control {
@@ -41,8 +42,9 @@
 }
 
 .react-select__single-value {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 500 !important;
 }
 
 .error-select__single-value {
@@ -238,4 +240,10 @@
     .react-select__placeholder {
         font-size: 12px !important;
     }
+
+    .react-select__single-value {
+        font-size: 12px !important;
+        line-height: 24px !important;
+        font-weight: 400 !important;
+    }    
 }
