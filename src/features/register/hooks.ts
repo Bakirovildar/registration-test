@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { concatFullName } from "../../entity/register/utils"
-import { registerUser } from "../../services/register-service"
 import { register } from "../../services/userApiService"
 
 export const useSaveInfo = () => {
@@ -66,9 +65,14 @@ export const useSaveInfo = () => {
 
         const apiUser = await register()
 
-        const isSuccessful = registerUser(fullName, concatFullName(apiUser.name.first, apiUser.name.last))
+        const isSuccessful = () => {
+            if (fullName === concatFullName(apiUser.name.first, apiUser.name.last)) {
+                return false
+            }
+            return true
+        }
 
-        alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
+        alert(isSuccessful() ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
         console.log(registerData);
 
     }
