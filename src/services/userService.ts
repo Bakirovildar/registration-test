@@ -4,7 +4,7 @@ import { RandomUserApiClient } from "./api/randomUserApiClient";
 const UserService = {
     async saveUser(user: User): Promise<Boolean> {
         if (!user.fullName || !user.gender || !user.birthDate) {
-            throw new UserInputValidationError("invalid request")
+            throw new UserValidationError("invalid request")
         }
 
         const apiUsers = await RandomUserApiClient.register()
@@ -24,8 +24,8 @@ interface User {
     duties: string
 }
 
-class UserInputValidationError extends Error {
-    name = 'UserInputValidationError'
+class UserValidationError extends Error {
+    name = 'UserValidationError'
 }
 
-export { User, UserInputValidationError, UserService };
+export { User, UserValidationError, UserService };

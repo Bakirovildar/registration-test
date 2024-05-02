@@ -1,5 +1,5 @@
 import {ApiUser, RandomUserApiClient} from "./api/randomUserApiClient";
-import {UserService, User, UserInputValidationError} from "./userService";
+import {UserService, User, UserValidationError} from "./userService";
 
 test('saveUser success test', async () => {
     const user = {fullName: 'Сидоров Антон Викторович', gender: 'Мужской', birthDate: new Date(1981, 1, 1)} as User;
@@ -34,7 +34,7 @@ test('saveUser validation failed test', async () => {
         try {
             await UserService.saveUser(user);
         } catch (e) {
-            expect(e).toBeInstanceOf(UserInputValidationError)
+            expect(e).toBeInstanceOf(UserValidationError)
         }
     }
 })
