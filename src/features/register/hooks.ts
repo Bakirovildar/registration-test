@@ -1,6 +1,6 @@
 import { Nullable } from "primereact/ts-helpers";
 import { useEffect, useState } from "react";
-import { User, saveUser } from "../../services/registerService";
+import { User, UserService } from "../../services/userService";
 
 export const useSaveInfo = () => {
     const [fullName, setFullName] = useState<string>('')
@@ -30,7 +30,7 @@ export const useSaveInfo = () => {
                 workName,
                 duties
             }
-            const isSuccessful = await saveUser(registerData);
+            const isSuccessful = await UserService.saveUser(registerData);
             alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
         } catch (err: any) {
             if (err.name === 'UserInputValidationError') {
