@@ -45,6 +45,11 @@
     color: #B1B6BC;
 }
 
+.p-datepicker-header {
+    width: 95%;
+    padding-left: 5%;
+}
+
 .p-datepicker {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.09);

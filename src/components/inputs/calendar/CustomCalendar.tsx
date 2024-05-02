@@ -37,6 +37,7 @@ export const CustomCalendar = ({dateFormat, required, headTitle, isInvalid, onCh
                           value={date}
                           onChange={(e) => setDate(e.value)}
                           view={dateFormat === "yy" ? "year" : "date"}
+                          placeholder={dateFormat === "yy" ? "0000" : "00.00.0000"}
                           locale='ru'/>
                 <span className="calendar-icon">
                     <img src={iconCalendar} alt=""/>
