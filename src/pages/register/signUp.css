@@ -45,6 +45,10 @@
         font-size: 26px;
     }
 
+    .p-calendar {
+        height: 42px;
+    }
+
     .sign-justify {
         display: flex;
         flex-direction: column;

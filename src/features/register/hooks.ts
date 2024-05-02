@@ -13,7 +13,7 @@ export const useSaveInfo = () => {
     const [duties, setDuties] = useState<string>('')
 
     const [isInvalid, setIsInvalid] = useState(false)
-
+    const [isSuccessful, setIsSuccessful] = useState(false)
 
     const saveInfoHandler = (name: string, value: string) => {
         const newLocal = 'gender'
@@ -48,18 +48,29 @@ export const useSaveInfo = () => {
         }
     }, [fullName, gender, birthDate])
 
-    const clickSaveHandler = async() => {
+    const clickSaveHandler = async () => {
         if (!fullName || !gender || !birthDate) {
             setIsInvalid(true)
             return
         }
 
+        const registerData = {
+            fullName,
+            gender,
+            birthDate,
+            university,
+            yearEnding,
+            workName,
+            duties
+        }
+
         const apiUser = await register()
 
-        const isSuccessfull = registerUser(fullName, concatFullName(apiUser.name.first, apiUser.name.last))
-    
-        console.log(isSuccessfull);
-        
+        const isSuccessful = registerUser(fullName, concatFullName(apiUser.name.first, apiUser.name.last))
+
+        alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
+        console.log(registerData);
+
     }
 
     return {

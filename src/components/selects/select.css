@@ -228,6 +228,11 @@
 
     .react-select__control {
         padding: 0 8px !important;
+        min-height: 42px !important;
+    }
+
+    .error-select__control {
+        min-height: 42px !important;
     }
 
     .react-select__placeholder {
