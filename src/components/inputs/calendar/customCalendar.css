@@ -24,6 +24,14 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
 }
 
+.p-highlight {
+    width: 34px;
+    height: 34px;
+    background: #5CCC81;
+    border-radius: 50%;
+    color: white;
+}
+
 .p-datepicker {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.09);

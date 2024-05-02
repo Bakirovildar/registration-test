@@ -15,8 +15,9 @@
     text-align: left;
 }
 
-textarea::placeholder {
+textarea::-moz-placeholder {
     color: rgba(0, 0, 0, 0.60);
+    font-size: 16px;
     font-weight: 200;
 }
 
