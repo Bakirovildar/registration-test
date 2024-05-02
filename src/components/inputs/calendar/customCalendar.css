@@ -111,4 +111,9 @@
     .calendar-icon {
         top: 50%;
     }
+
+    .p-inputtext {
+        font-size: 12px;
+        padding-left: 16px;
+    }
 }
