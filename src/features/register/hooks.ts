@@ -65,16 +65,10 @@ export const useSaveInfo = () => {
 
         const apiUser = await register()
 
-        const isSuccessful = () => {
-            if (fullName === concatFullName(apiUser.name.first, apiUser.name.last)) {
-                return false
-            }
-            return true
-        }
+        const isSuccessful = fullName !== concatFullName(apiUser.name.first, apiUser.name.last)
 
-        alert(isSuccessful() ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
+        alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
         console.log(registerData);
-
     }
 
     return {
