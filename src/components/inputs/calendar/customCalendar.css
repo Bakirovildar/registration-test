@@ -24,7 +24,7 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
 }
 
-.p-highlight {
+.p-datepicker-calendar .p-highlight {
     width: 34px;
     height: 34px;
     background: #5CCC81;
@@ -38,6 +38,11 @@
     padding: 20px;
     border-radius: 16px;
     color: #42474D;
+}
+
+.p-datepicker table {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .p-datepicker-header {

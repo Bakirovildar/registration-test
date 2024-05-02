@@ -64,7 +64,7 @@ export const SignUp = () => {
                 </PersonalInfoComponent>
 
                 <PersonalInfoComponent headTitle='Работа'>
-                    <SelectComponent headTitle='Место работы' options={['МГУ', 'МГТУ', 'БГУ']} onChange={value => setWorkName(value)} placeholder='Место работы' />
+                    <SelectComponent headTitle='Место работы' options={['Google', 'Yandex', 'Facebook', 'Rambler']} onChange={value => setWorkName(value)} placeholder='Место работы' />
                     <TextareaComponent onChange={event => setDuties(event.target.value)} placeholder='Должностные обязанности' />
 
                     <div style={{ textAlign: 'center', marginTop: '4px' }}>
