@@ -33,6 +33,18 @@
     margin: auto;
 }
 
+.p-datepicker-next {
+    background: none;
+    border: none;
+    color: #B1B6BC;
+}
+
+.p-datepicker-prev {
+    background: none;
+    border: none;
+    color: #B1B6BC;
+}
+
 .p-datepicker {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.09);
