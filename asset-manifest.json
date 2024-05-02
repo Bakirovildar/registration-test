@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/registration-test/static/css/main.4b250ace.css",
+    "main.css": "/registration-test/static/css/main.c72f5a97.css",
     "main.js": "/registration-test/static/js/main.fca60859.js",
     "static/js/453.0fdc27f5.chunk.js": "/registration-test/static/js/453.0fdc27f5.chunk.js",
     "static/media/фон.png": "/registration-test/static/media/фон.e829b180a9f559567ff6.png",
     "index.html": "/registration-test/index.html",
     "static/media/IconCalendar.svg": "/registration-test/static/media/IconCalendar.57f0a563d50140acedce35be1d2f7e11.svg",
-    "main.4b250ace.css.map": "/registration-test/static/css/main.4b250ace.css.map",
+    "main.c72f5a97.css.map": "/registration-test/static/css/main.c72f5a97.css.map",
     "main.fca60859.js.map": "/registration-test/static/js/main.fca60859.js.map",
     "453.0fdc27f5.chunk.js.map": "/registration-test/static/js/453.0fdc27f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b250ace.css",
+    "static/css/main.c72f5a97.css",
     "static/js/main.fca60859.js"
   ]
 }
