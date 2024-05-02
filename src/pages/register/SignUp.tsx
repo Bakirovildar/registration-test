@@ -13,15 +13,19 @@ export const SignUp = () => {
     const [date, setDate] = useState<Nullable<Date>>(null);
 
     const {
-        saveInfoHandler,
         fullName,
         clickSaveHandler,
         isInvalid,
         birthDate,
+        gender,
         setBirthDate,
         setFullName,
         setGender,
-        gender } = useSaveInfo()
+        setUniversity,
+        setDuties,
+        setWorkName,
+        setYearEnding
+    } = useSaveInfo()
 
     return (
         <div className="signUp-container">
@@ -33,35 +37,35 @@ export const SignUp = () => {
                         placeholder='Введите ФИО'
                         required={true}
                         isInvalid={!fullName && isInvalid}
-                        onChange={event => saveInfoHandler('fullName', event.target.value)} />
+                        onChange={event => setFullName(event.target.value)} />
                     <div className='sign-justify'>
                         <SelectComponent
                             required
                             headTitle='Пол'
                             isInvalid={!gender && isInvalid}
                             options={['Мужской', 'Женский']}
-                            onChange={value => saveInfoHandler('gender', value)}
+                            onChange={value => setGender(value)}
                             placeholder='Выберите пол' />
                         <CustomCalendar
                             headTitle='Дата рождения'
                             isInvalid={!birthDate && isInvalid}
                             required
-                            onChange={date => saveInfoHandler('birthDate', date ? date.toISOString() : '')} />
+                            onChange={date => setBirthDate(date)} />
                     </div>
                 </PersonalInfoComponent>
 
                 <PersonalInfoComponent headTitle='Образование'>
                     <div className='sign-justify'>
-                        <SelectComponent headTitle='ВУЗ' options={['МГУ', 'МГТУ', 'БГУ']} onChange={value => saveInfoHandler('university', value)} placeholder='Выберите ВУЗ' />
+                        <SelectComponent headTitle='ВУЗ' options={['МГУ', 'МГТУ', 'БГУ']} onChange={value => setUniversity(value)} placeholder='Выберите ВУЗ' />
                         <div className='calendar-year'>
-                            <CustomCalendar headTitle='Год окончания' dateFormat='yy' onChange={(date) => saveInfoHandler('yearEnding', date ? date.toISOString() : '')} />
+                            <CustomCalendar headTitle='Год окончания' dateFormat='yy' onChange={(date) => setYearEnding(date)} />
                         </div>
                     </div>
                 </PersonalInfoComponent>
 
                 <PersonalInfoComponent headTitle='Работа'>
-                    <SelectComponent headTitle='Место работы' options={['МГУ', 'МГТУ', 'БГУ']} onChange={value => saveInfoHandler('workName', value)} placeholder='Место работы' />
-                    <TextareaComponent onChange={event => saveInfoHandler('duties', event.target.value)} placeholder='Должностные обязанности' />
+                    <SelectComponent headTitle='Место работы' options={['МГУ', 'МГТУ', 'БГУ']} onChange={value => setWorkName(value)} placeholder='Место работы' />
+                    <TextareaComponent onChange={event => setDuties(event.target.value)} placeholder='Должностные обязанности' />
 
                     <div style={{ textAlign: 'center', marginTop: '4px' }}>
                         <Button onClick={clickSaveHandler} className='button-black'>Сохранить</Button>

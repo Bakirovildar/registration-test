@@ -1,43 +1,17 @@
-import { useEffect, useState } from "react"
-import {saveUser, User} from "../../services/registerService";
+import { Nullable } from "primereact/ts-helpers";
+import { useEffect, useState } from "react";
+import { User, saveUser } from "../../services/registerService";
 
 export const useSaveInfo = () => {
     const [fullName, setFullName] = useState<string>('')
     const [gender, setGender] = useState<string>('')
-    const [birthDate, setBirthDate] = useState<string>('')
+    const [birthDate, setBirthDate] = useState<Nullable<Date>>()
     const [university, setUniversity] = useState<string>('')
-    const [yearEnding, setYearEnding] = useState<string>('')
+    const [yearEnding, setYearEnding] = useState<Nullable<Date>>()
     const [workName, setWorkName] = useState<string>('')
     const [duties, setDuties] = useState<string>('')
 
     const [isInvalid, setIsInvalid] = useState(false)
-
-    const saveInfoHandler = (name: string, value: string) => {
-        const newLocal = 'gender'
-        switch (name) {
-            case 'fullName':
-                setFullName(value);
-                break;
-            case newLocal:
-                setGender(value);
-                break;
-            case 'birthDate':
-                setBirthDate(value);
-                break;
-            case 'university':
-                setUniversity(value);
-                break;
-            case 'yearEnding':
-                setYearEnding(value);
-                break;
-            case 'workName':
-                setWorkName(value);
-                break;
-            case 'duties':
-                setDuties(value);
-                break;
-        }
-    }
 
     useEffect(() => {
         if (!fullName || !gender || !birthDate) {
@@ -59,7 +33,7 @@ export const useSaveInfo = () => {
             const isSuccessful = await saveUser(registerData);
             alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
         } catch (err: any) {
-            if (err.name === 'UserInputValidationError'){
+            if (err.name === 'UserInputValidationError') {
                 setIsInvalid(true)
             }
         }
@@ -67,13 +41,16 @@ export const useSaveInfo = () => {
 
     return {
         fullName,
-        saveInfoHandler,
         gender,
         birthDate,
         clickSaveHandler,
         isInvalid,
         setGender,
         setFullName,
-        setBirthDate
+        setBirthDate,
+        setUniversity,
+        setYearEnding,
+        setWorkName,
+        setDuties
     }
 }
