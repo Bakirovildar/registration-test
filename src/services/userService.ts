@@ -24,8 +24,6 @@ interface User {
     duties: string
 }
 
-class UserValidationError extends Error {
-    name = 'UserValidationError'
-}
+class UserValidationError extends Error { }
 
-export { User, UserValidationError, UserService };
+export { User, UserService, UserValidationError };
