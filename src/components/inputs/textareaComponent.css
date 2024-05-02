@@ -15,6 +15,11 @@
     text-align: left;
 }
 
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.60);
+    font-weight: 200;
+}
+
 .error-style {
     border: 1px solid red;
     border-radius: 8px;

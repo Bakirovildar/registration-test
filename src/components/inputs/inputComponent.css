@@ -25,6 +25,7 @@
 
 .text-input::placeholder {
     color: rgba(0, 0, 0, 0.60);
+    font-weight: 200;
 }
 
 .error-style {

@@ -70,15 +70,15 @@
     color: rgba(0, 0, 0, 0.60) !important;
     font-size: 16px !important;
     font-style: normal !important;
-    font-weight: 500 !important;
+    font-weight: 200 !important;
     line-height: 24px !important;
 }
 
 .error-select__placeholder {
-    color: #23262f !important;
-    font-size: 14px !important;
+    color: rgba(0, 0, 0, 0.60) !important;
+    font-size: 16px !important;
     font-style: normal !important;
-    font-weight: 500 !important;
+    font-weight: 200 !important;
     line-height: 24px !important;
 }
 

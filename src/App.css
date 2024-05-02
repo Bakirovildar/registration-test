@@ -27,5 +27,11 @@
 }
 
 .button-black:active {
-  background: rgb(109, 29, 26);;
+  background: rgb(109, 29, 26);
+}
+
+@media all and (max-width: 600px) {
+  .button-black {
+    width: 100%;
+  }
 }
