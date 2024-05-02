@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { concatFullName } from "../../entity/register/utils"
-import { register } from "../../services/userApiService"
+import {saveUser, User} from "../../services/registerService";
 
 export const useSaveInfo = () => {
     const [fullName, setFullName] = useState<string>('')
@@ -12,7 +11,6 @@ export const useSaveInfo = () => {
     const [duties, setDuties] = useState<string>('')
 
     const [isInvalid, setIsInvalid] = useState(false)
-    const [isSuccessful, setIsSuccessful] = useState(false)
 
     const saveInfoHandler = (name: string, value: string) => {
         const newLocal = 'gender'
@@ -48,27 +46,23 @@ export const useSaveInfo = () => {
     }, [fullName, gender, birthDate])
 
     const clickSaveHandler = async () => {
-        if (!fullName || !gender || !birthDate) {
-            setIsInvalid(true)
-            return
+        try {
+            const registerData: User = {
+                fullName,
+                gender,
+                birthDate,
+                university,
+                yearEnding,
+                workName,
+                duties
+            }
+            const isSuccessful = await saveUser(registerData);
+            alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
+        } catch (err: any) {
+            if (err.name === 'UserInputValidationError'){
+                setIsInvalid(true)
+            }
         }
-
-        const registerData = {
-            fullName,
-            gender,
-            birthDate,
-            university,
-            yearEnding,
-            workName,
-            duties
-        }
-
-        const apiUser = await register()
-
-        const isSuccessful = fullName !== concatFullName(apiUser.name.first, apiUser.name.last)
-
-        alert(isSuccessful ? 'Вы успешно зарегистрировались' : 'Вы уже зарегистрированы')
-        console.log(registerData);
     }
 
     return {
